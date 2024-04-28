@@ -61,17 +61,15 @@ function basketCount(array) {
     let len=array.length;
     basketLength.innerHTML=`${len}`
    }
-   
    basketCount(basket)
-    renderUI(basket)
+   renderUI(basket)
 
 const deleteHandler = (id) => {
-    let target = basket.find((card) => card.id === id);
+    let target = basket.find((card) => card.id == id);
     let indeOfTarget=basket.indexOf(target)
+    console.log(target,indeOfTarget);
     basket.splice(indeOfTarget, 1);
     localStorage.setItem("basket", JSON.stringify(basket));
     renderUI(basket);
     console.log(basket);
 }
-
-
